@@ -46,7 +46,7 @@ namespace BLL
                 "[Phone Number],[Name of Guardian 1],[Name of Guardian 2],[Phone Number of"+
                 " Guardian 1],[Phone Number of Guardian 2],[password]) values "+
                 "(@IDNumber, @StudentID, @Fullname, @Class, @Gender, @Age, @BIogenicLand,"+
-                " @Major, @NCEEScore, @NameofGuardian1,@NameofGuardian2, @PhoneNumberofGuardian1,"+
+                " @Major, @NCEEScore, @PhoneNumber, @NameofGuardian1,@NameofGuardian2, @PhoneNumberofGuardian1,"+
                 " @PhoneNumberofGuardian2, @password)";
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("IDNumber", student.IDNumber));

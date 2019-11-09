@@ -13,17 +13,17 @@ namespace DAL.Services
         public List<ClassInfo> GetClassInfos()
         {
             List<ClassInfo> classInfos = new List<ClassInfo>();
-            string sql = "select * from class_info";
+            string sql = "select * from Classroom_Info";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             while (sdr.Read())
             {
                 ClassInfo classInfo = new ClassInfo()
                 {
                     ID = (int)sdr["ID"],
-                    classnum = (string)sdr["class_num"],
-                    classaddress = (string)sdr["class_address"],
-                    classCapacity = (int)sdr["class_capacity"],
-                    classmutilmedia = (string)sdr["class_mutilmedia"]
+                    classnum = (string)sdr["Classroom Number"],
+                    classaddress = (string)sdr["Classroom location"],
+                    classCapacity = (int)sdr["Capacity"],
+                    classmutilmedia = (string)sdr["Multimedia Situation"]
                 };
                 classInfos.Add(classInfo);
             }
@@ -34,17 +34,17 @@ namespace DAL.Services
         public List<ClassInfo> GetClassInfoByClassNumber(string classNumber)
         {
             List<ClassInfo> classInfos = new List<ClassInfo>();
-            string sql = $"select * from class_info where class_num={classNumber}";
+            string sql = "select * from Classroom_Info where Classroom Number={classNumber}"; 
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             while (sdr.Read())
             {
                 ClassInfo classInfo = new ClassInfo()
                 {
                     ID = (int)sdr["ID"],
-                    classnum = (string)sdr["class_num"],
-                    classaddress = (string)sdr["class_address"],
-                    classCapacity = (int)sdr["class_capacity"],
-                    classmutilmedia = (string)sdr["class_mutilmedia"]
+                    classnum = (string)sdr["Classroom_Number"],
+                    classaddress = (string)sdr["Classroom location"],
+                    classCapacity = (int)sdr["Capacity"],
+                    classmutilmedia = (string)sdr["Multimedia Situation"]
                 };
                 classInfos.Add(classInfo);
             }

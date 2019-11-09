@@ -41,6 +41,7 @@ namespace 教务管理
             else
             {
                 this.buttonChangeInfo.Text = "确认添加";
+                this.FormBorderStyle = FormBorderStyle.FixedSingle;
             }
         }
         void initTextBox(StuBasicinfo studen)
@@ -58,6 +59,8 @@ namespace 教务管理
             this.textBoxGuardian2.Text = studen.stuGuardian2;
             this.textBoxIDcard.Text = studen.IDNumber;
             this.comboBoxGender.SelectedIndex = Gender2Number(studen.stuGender);
+            this.textBoxGP1.Text = this.student.Guar1PhoneNumber;
+            this.textBoxGP2.Text = this.student.Guar2PhoneNumber;
 
             foreach (var item in this.Controls)
             {
@@ -72,7 +75,6 @@ namespace 教务管理
         StuBasicinfo GetStuFromForm()
         {
             string pwd;
-            string ID;
             // 如果是添加学生
             if (isAdd)
             {
@@ -82,50 +84,54 @@ namespace 教务管理
             {
                 pwd = this.student.stu_pwd;
             }
-            // 复制一个student对象
-            StuBasicinfo student = new StuBasicinfo()
+            StuBasicinfo stu = new StuBasicinfo();
+            //if (!isAdd)
+            //{
+            //    // 复制一个student对象
+            //    StuBasicinfo student = new StuBasicinfo()
+            //    {
+            //        ID = this.student.ID,
+            //        IDNumber = this.student.IDNumber,
+            //        StudentID = this.student.StudentID,
+            //        stuName = this.student.stuName,
+            //        stuClass = this.student.stuClass,
+            //        stuGender = this.student.stuGender,
+            //        stuAge = this.student.stuAge,
+            //        BiogenicLand = this.student.BiogenicLand,
+            //        stuCollege = this.student.stuCollege,
+            //        stuMajor = this.student.stuMajor,
+            //        GKchengji = this.student.GKchengji,
+            //        phoneNumber = this.student.phoneNumber,
+            //        stuGuardian1 = this.student.stuGuardian1,
+            //        stuGuardian2 = this.student.stuGuardian2,
+            //        Guar1PhoneNumber = this.student.Guar1PhoneNumber,
+            //        Guar2PhoneNumber = this.student.Guar2PhoneNumber,
+            //        stu_pwd = this.student.stu_pwd
+            //    };
+            //}
+            if (!isAdd)
             {
-                ID = this.student.ID,
-                IDNumber = this.student.IDNumber,
-                StudentID = this.student.StudentID,
-                stuName = this.student.stuName,
-                stuClass = this.student.stuClass,
-                stuGender = this.student.stuGender,
-                stuAge = this.student.stuAge,
-                BiogenicLand = this.student.BiogenicLand,
-                stuCollege = this.student.stuCollege,
-                stuMajor = this.student.stuMajor,
-                GKchengji = this.student.GKchengji,
-                phoneNumber = this.student.phoneNumber,
-                stuGuardian1 = this.student.stuGuardian1,
-                stuGuardian2 = this.student.stuGuardian2,
-                Guar1PhoneNumber = this.student.Guar1PhoneNumber,
-                Guar2PhoneNumber = this.student.Guar2PhoneNumber,
-                stu_pwd = this.student.stu_pwd
-            };
-
-
-                student.stuName = this.textBoxName.Text;
-                student.StudentID = this.textBoxNumber.Text;
-                student.stuMajor = this.textBoxMajor.Text;
-                student.stuAge = this.textBoxage.Text;
-                student.stuClass = this.textBoxClass.Text;
-                student.stuCollege = this.textBoxCollege.Text;
-                student.GKchengji = this.textBoxGKchengji.Text;
-                student.BiogenicLand = this.textBoxShengyuandi.Text;
-                student.phoneNumber = this.textBoxPhoneNumber.Text;
-                student.stuGuardian1 = this.textBoxGuardian1.Text;
-                student.stuGuardian2 = this.textBoxGuardian2.Text;
-                student.IDNumber = this.textBoxIDcard.Text;
-                student.stuGender = Number2Gender(this.comboBoxGender.SelectedIndex);
-                // 不更新项目
-                student.stu_pwd = pwd;
-            
-            if (! isAdd)
-            {
-                student.ID = this.student.ID;
+                stu.ID = this.student.ID;
             }
-            return student;
+            stu.stu_pwd = pwd;
+            stu.stuName = this.textBoxName.Text;
+            stu.StudentID = this.textBoxNumber.Text;
+            stu.stuMajor = this.textBoxMajor.Text;
+            stu.stuAge = this.textBoxage.Text;
+            stu.stuClass = this.textBoxClass.Text;
+            stu.stuCollege = this.textBoxCollege.Text;
+            stu.GKchengji = this.textBoxGKchengji.Text;
+            stu.BiogenicLand = this.textBoxShengyuandi.Text;
+            stu.phoneNumber = this.textBoxPhoneNumber.Text;
+            stu.stuGuardian1 = this.textBoxGuardian1.Text;
+            stu.stuGuardian2 = this.textBoxGuardian2.Text;
+            stu.IDNumber = this.textBoxIDcard.Text;
+            stu.stuGender = Number2Gender(this.comboBoxGender.SelectedIndex);
+            stu.Guar1PhoneNumber = textBoxGP1.Text;
+            stu.Guar2PhoneNumber = textBoxGP2.Text;
+                // 不更新项目
+            
+            return stu;
         }
 
         private void textBoxage_KeyPress(object sender, KeyPressEventArgs e)
@@ -189,7 +195,7 @@ namespace 教务管理
             else
             {
                 // 开始尝试修改信息
-                if (0 != string.Compare(this.buttonChangeInfo.Text, "确认添加"))
+                if (0 != string.Compare(this.buttonChangeInfo.Text, "确认修改"))
                 {
                     try
                     {
@@ -203,14 +209,19 @@ namespace 教务管理
                 if (0 == string.Compare(this.buttonChangeInfo.Text, "确认添加"))
                 {
                     StuBasicinfo stu = GetStuFromForm();
-                    this.student = new StuBasicinfo()
-                    {
-                        StudentID = stu.StudentID,
-                        stu_pwd = stu.stu_pwd
-                    };
                     // 添加后不是修改
-                    int vs = BLL.Update.InsertStudent(stu);
+                    try
+                    {
+                        int vs = BLL.Update.InsertStudent(stu);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("输入数据错误!" + ex.Message);
+                        return;
+                    }
                     this.isAdd = false;
+                    MessageBox.Show("添加成功!");
+                    this.Close();
                 }
                 DAL.Services.LoginService ls = new DAL.Services.LoginService();
                 this.student = ls.StuLogin(student);// 更新信息

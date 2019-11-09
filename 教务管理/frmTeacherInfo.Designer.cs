@@ -65,7 +65,7 @@
             this.textBoxNum.Location = new System.Drawing.Point(115, 59);
             this.textBoxNum.Name = "textBoxNum";
             this.textBoxNum.Size = new System.Drawing.Size(148, 31);
-            this.textBoxNum.TabIndex = 1;
+            this.textBoxNum.TabIndex = 0;
             // 
             // label1
             // 
@@ -101,7 +101,7 @@
             this.textBoxShenfenzheng.Location = new System.Drawing.Point(115, 137);
             this.textBoxShenfenzheng.Name = "textBoxShenfenzheng";
             this.textBoxShenfenzheng.Size = new System.Drawing.Size(346, 31);
-            this.textBoxShenfenzheng.TabIndex = 1;
+            this.textBoxShenfenzheng.TabIndex = 2;
             this.textBoxShenfenzheng.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxShenfenzheng_KeyPress);
             // 
             // label3
@@ -120,7 +120,7 @@
             this.textBoxAge.Location = new System.Drawing.Point(115, 210);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(100, 31);
-            this.textBoxAge.TabIndex = 1;
+            this.textBoxAge.TabIndex = 3;
             this.textBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAge_KeyPress);
             // 
             // label4
@@ -149,7 +149,7 @@
             this.textBoxCollege.Location = new System.Drawing.Point(115, 284);
             this.textBoxCollege.Name = "textBoxCollege";
             this.textBoxCollege.Size = new System.Drawing.Size(199, 31);
-            this.textBoxCollege.TabIndex = 1;
+            this.textBoxCollege.TabIndex = 5;
             // 
             // label6
             // 
@@ -168,7 +168,7 @@
             this.textBoxMajor.Location = new System.Drawing.Point(468, 285);
             this.textBoxMajor.Name = "textBoxMajor";
             this.textBoxMajor.Size = new System.Drawing.Size(187, 31);
-            this.textBoxMajor.TabIndex = 1;
+            this.textBoxMajor.TabIndex = 6;
             this.textBoxMajor.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label7
@@ -187,7 +187,7 @@
             this.textBoxOfficeAddr.Location = new System.Drawing.Point(115, 370);
             this.textBoxOfficeAddr.Name = "textBoxOfficeAddr";
             this.textBoxOfficeAddr.Size = new System.Drawing.Size(163, 31);
-            this.textBoxOfficeAddr.TabIndex = 1;
+            this.textBoxOfficeAddr.TabIndex = 7;
             // 
             // label8
             // 
@@ -205,7 +205,7 @@
             this.textBoxPhoneNumber.Location = new System.Drawing.Point(468, 370);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(143, 31);
-            this.textBoxPhoneNumber.TabIndex = 1;
+            this.textBoxPhoneNumber.TabIndex = 8;
             // 
             // comboBox1
             // 
@@ -218,7 +218,7 @@
             this.comboBox1.Location = new System.Drawing.Point(468, 211);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 32);
-            this.comboBox1.TabIndex = 2;
+            this.comboBox1.TabIndex = 4;
             // 
             // buttonXiugai
             // 
@@ -233,6 +233,7 @@
             // 
             // frmTeacherInfo
             // 
+            this.AcceptButton = this.buttonXiugai;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 545);

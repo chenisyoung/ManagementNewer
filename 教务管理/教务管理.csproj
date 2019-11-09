@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,7 +71,24 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Limit.cs" />
+    <Compile Include="frmTeacherChaxun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherChaxun.Designer.cs">
+      <DependentUpon>frmTeacherChaxun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd.Designer.cs">
+      <DependentUpon>FrmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdate.Designer.cs">
+      <DependentUpon>FrmUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +114,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacherChaxun.resx">
+      <DependentUpon>frmTeacherChaxun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd.resx">
+      <DependentUpon>FrmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdate.resx">
+      <DependentUpon>FrmUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

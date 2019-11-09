@@ -12,7 +12,7 @@ namespace DAL.Services
     {
         public List<TeacherInfo> GetTeacherInfoByNumber(string number)
         {
-            string sql = $"select * from teacher_info where t_number={number}";
+            string sql = $"select * from Teacher_Info where [Job number]={number}";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             List<TeacherInfo> teacherInfos = new List<TeacherInfo>();
             if (sdr.Read())
@@ -20,16 +20,16 @@ namespace DAL.Services
                 teacherInfos.Add(new TeacherInfo()
                 {
                     ID = (int)sdr["ID"],
-                    shenfenzheng = (string)sdr["shenfenzheng"],
-                    teacherGender = (string)sdr["t_gender"],
-                    teacherAge = (string)sdr["t_age"],
-                    JobNumber = (string)sdr["t_number"],
-                    teacherName = (string)sdr["t_name"],
-                    teacherCollege = (string)sdr["t_collage"],
-                    teacherMajor = (string)sdr["t_major"],
-                    teacherOffice = (string)sdr["t_office"],
-                    teacherPhoneNumber = (string)sdr["t_phonenumber"],
-                    t_pwd = (string)sdr["t_pwd"]
+                    shenfenzheng = sdr.GetString(1),
+                    teacherGender = sdr.GetString(2),
+                    teacherAge = sdr.GetString(3),
+                    JobNumber = sdr.GetString(4),
+                    teacherName = sdr.GetString(5),
+                    teacherCollege = sdr.GetString(6),
+                    teacherMajor = sdr.GetString(7),
+                    teacherOffice = sdr.GetString(8),
+                    teacherPhoneNumber = sdr.GetString(9),
+                    t_pwd = sdr.GetString(10)
                 });
             }
             return teacherInfos;

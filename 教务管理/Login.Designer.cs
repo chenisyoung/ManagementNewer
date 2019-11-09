@@ -50,6 +50,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(44, 40);
             this.button1.TabIndex = 10;
+            this.button1.TabStop = false;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -106,22 +107,22 @@
             // RadioButtonTeacher
             // 
             this.RadioButtonTeacher.AutoSize = true;
-            this.RadioButtonTeacher.Checked = true;
-            this.RadioButtonTeacher.Location = new System.Drawing.Point(150, 188);
+            this.RadioButtonTeacher.Location = new System.Drawing.Point(262, 182);
             this.RadioButtonTeacher.Name = "RadioButtonTeacher";
             this.RadioButtonTeacher.Size = new System.Drawing.Size(58, 19);
             this.RadioButtonTeacher.TabIndex = 3;
-            this.RadioButtonTeacher.TabStop = true;
             this.RadioButtonTeacher.Text = "老师";
             this.RadioButtonTeacher.UseVisualStyleBackColor = true;
             // 
             // RadioButtonStudent
             // 
             this.RadioButtonStudent.AutoSize = true;
-            this.RadioButtonStudent.Location = new System.Drawing.Point(267, 188);
+            this.RadioButtonStudent.Checked = true;
+            this.RadioButtonStudent.Location = new System.Drawing.Point(174, 182);
             this.RadioButtonStudent.Name = "RadioButtonStudent";
             this.RadioButtonStudent.Size = new System.Drawing.Size(58, 19);
             this.RadioButtonStudent.TabIndex = 4;
+            this.RadioButtonStudent.TabStop = true;
             this.RadioButtonStudent.Text = "学生";
             this.RadioButtonStudent.UseVisualStyleBackColor = true;
             // 

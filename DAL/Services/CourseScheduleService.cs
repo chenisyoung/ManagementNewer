@@ -12,7 +12,7 @@ namespace DAL.Services
     {
         public List<CourseSchedule> GetCourseSchedules()
         {
-            string sql = "select * from course_schedule";
+            string sql = "select * from Course_Schedule";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             List<CourseSchedule> courseSchedules = new List<CourseSchedule>();
             while (sdr.Read())
@@ -20,11 +20,11 @@ namespace DAL.Services
                 CourseSchedule courseSchedule = new CourseSchedule()
                 {
                     ID = (int)sdr["ID"],
-                    coursenumber = (string)sdr["course_number"],
-                    classnumber = (string)sdr["class_number"],
-                    tnumber = (string)sdr["t_number"],
-                    stuclass = (string)sdr["stu_class"],
-                    coursetime = (string)sdr["course_time"], // 上课时间
+                    coursenumber = (string)sdr["Course Number"],
+                    classnumber = (string)sdr["Classroom Number"],
+                    tnumber = (string)sdr["Job number"],
+                    stuclass = (string)sdr["TeachingClass"],
+                    coursetime = (string)sdr["Class time"], // 上课时间
                 };
                 courseSchedules.Add(courseSchedule);
             }
@@ -34,7 +34,7 @@ namespace DAL.Services
 
         public List<CourseSchedule> GetCourseScheduleByCourseNumber(string courseNumber)
         {
-            string sql = $"select * from course_schedule where course_number={courseNumber}";
+            string sql = $"select * from Course_Schedule where [Course Number]='{courseNumber}'";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             List<CourseSchedule> courseSchedules = new List<CourseSchedule>();
             while (sdr.Read())
@@ -42,11 +42,11 @@ namespace DAL.Services
                 CourseSchedule courseSchedule = new CourseSchedule()
                 {
                     ID = (int)sdr["ID"],
-                    coursenumber = (string)sdr["course_number"],
-                    classnumber = (string)sdr["class_number"],
-                    tnumber = (string)sdr["t_number"],
-                    stuclass = (string)sdr["stu_class"],
-                    coursetime = (string)sdr["course_time"], // 上课时间
+                    coursenumber = (string)sdr["Course Number"],
+                    classnumber = (string)sdr["Classroom Number"],
+                    tnumber = (string)sdr["Job number"],
+                    stuclass = (string)sdr["TeachingClass"],
+                    coursetime = (string)sdr["Class time"], // 上课时间
                 };
                 courseSchedules.Add(courseSchedule);
             }
@@ -56,7 +56,7 @@ namespace DAL.Services
 
         public List<CourseSchedule> GetCourseScheduleByClassNumber(string classNumber)
         {
-            string sql = $"select * from course_schedule where class_number={classNumber}";
+            string sql = $"select * from Course_Schedule where [Classroom Number]='{classNumber}'";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             List<CourseSchedule> courseSchedules = new List<CourseSchedule>();
             while (sdr.Read())
@@ -64,11 +64,11 @@ namespace DAL.Services
                 CourseSchedule courseSchedule = new CourseSchedule()
                 {
                     ID = (int)sdr["ID"],
-                    coursenumber = (string)sdr["course_number"],
-                    classnumber = (string)sdr["class_number"],
-                    tnumber = (string)sdr["t_number"],
-                    stuclass = (string)sdr["stu_class"],
-                    coursetime = (string)sdr["course_time"], // 上课时间
+                    coursenumber = (string)sdr["Course Number"],
+                    classnumber = (string)sdr["Classroom Number"],
+                    tnumber = (string)sdr["Job number"],
+                    stuclass = (string)sdr["TeachingClass"],
+                    coursetime = (string)sdr["Class time"], // 上课时间
                 };
                 courseSchedules.Add(courseSchedule);
             }
@@ -78,7 +78,7 @@ namespace DAL.Services
 
         public List<CourseSchedule> GetCourseScheduleByTeacherNumber(string teacherNumber)
         {
-            string sql = $"select * from course_schedule where t_number={teacherNumber}";
+            string sql = $"select * from Course_Schedule where [Job number]='{teacherNumber}'";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             List<CourseSchedule> courseSchedules = new List<CourseSchedule>();
             while (sdr.Read())
@@ -86,11 +86,11 @@ namespace DAL.Services
                 CourseSchedule courseSchedule = new CourseSchedule()
                 {
                     ID = (int)sdr["ID"],
-                    coursenumber = (string)sdr["course_number"],
-                    classnumber = (string)sdr["class_number"],
-                    tnumber = (string)sdr["t_number"],
-                    stuclass = (string)sdr["stu_class"],
-                    coursetime = (string)sdr["course_time"], // 上课时间
+                    coursenumber = (string)sdr["Course Number"],
+                    classnumber = (string)sdr["Classroom Number"],
+                    tnumber = (string)sdr["Job number"],
+                    stuclass = (string)sdr["TeachingClass"],
+                    coursetime = (string)sdr["Class time"], // 上课时间
                 };
                 courseSchedules.Add(courseSchedule);
             }
@@ -99,7 +99,7 @@ namespace DAL.Services
         }
         public List<CourseSchedule> GetCourseScheduleByStuClass(string stuClass)
         {
-            string sql = $"select * from course_schedule where stu_class={stuClass}";
+            string sql = $"select * from Course_Schedule where [TeachingClass]='{stuClass}'";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             List<CourseSchedule> courseSchedules = new List<CourseSchedule>();
             while (sdr.Read())
@@ -107,11 +107,11 @@ namespace DAL.Services
                 CourseSchedule courseSchedule = new CourseSchedule()
                 {
                     ID = (int)sdr["ID"],
-                    coursenumber = (string)sdr["course_number"],
-                    classnumber = (string)sdr["class_number"],
-                    tnumber = (string)sdr["t_number"],
-                    stuclass = (string)sdr["stu_class"],
-                    coursetime = (string)sdr["course_time"], // 上课时间
+                    coursenumber = (string)sdr["Course Number"],
+                    classnumber = (string)sdr["Classroom Number"],
+                    tnumber = (string)sdr["Job number"],
+                    stuclass = (string)sdr["TeachingClass"],
+                    coursetime = (string)sdr["Class time"], // 上课时间
                 };
                 courseSchedules.Add(courseSchedule);
             }
@@ -120,7 +120,7 @@ namespace DAL.Services
         }
         public List<CourseSchedule> GetCourseScheduleByTime(string time)
         {
-            string sql = $"select * from course_schedule where course_time={time}";
+            string sql = $"select * from Course_Schedule where [Class time]='{time}'";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql);
             List<CourseSchedule> courseSchedules = new List<CourseSchedule>();
             while (sdr.Read())
@@ -128,11 +128,11 @@ namespace DAL.Services
                 CourseSchedule courseSchedule = new CourseSchedule()
                 {
                     ID = (int)sdr["ID"],
-                    coursenumber = (string)sdr["course_number"],
-                    classnumber = (string)sdr["class_number"],
-                    tnumber = (string)sdr["t_number"],
-                    stuclass = (string)sdr["stu_class"],
-                    coursetime = (string)sdr["course_time"], // 上课时间
+                    coursenumber = (string)sdr["Course Number"],
+                    classnumber = (string)sdr["Classroom Number"],
+                    tnumber = (string)sdr["Job number"],
+                    stuclass = (string)sdr["TeachingClass"],
+                    coursetime = (string)sdr["Class time"], // 上课时间
                 };
                 courseSchedules.Add(courseSchedule);
             }

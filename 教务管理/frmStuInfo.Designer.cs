@@ -58,6 +58,10 @@
             this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.labelPwd = new System.Windows.Forms.Label();
             this.textBoxPwd = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxGP1 = new System.Windows.Forms.TextBox();
+            this.textBoxGP2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -289,7 +293,7 @@
             // buttonChangeInfo
             // 
             this.buttonChangeInfo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonChangeInfo.Location = new System.Drawing.Point(694, 389);
+            this.buttonChangeInfo.Location = new System.Drawing.Point(685, 455);
             this.buttonChangeInfo.Name = "buttonChangeInfo";
             this.buttonChangeInfo.Size = new System.Drawing.Size(103, 38);
             this.buttonChangeInfo.TabIndex = 13;
@@ -308,13 +312,13 @@
             this.comboBoxGender.Location = new System.Drawing.Point(135, 158);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(100, 23);
-            this.comboBoxGender.TabIndex = 14;
+            this.comboBoxGender.TabIndex = 3;
             // 
             // labelPwd
             // 
             this.labelPwd.AutoSize = true;
             this.labelPwd.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelPwd.Location = new System.Drawing.Point(20, 428);
+            this.labelPwd.Location = new System.Drawing.Point(20, 498);
             this.labelPwd.Name = "labelPwd";
             this.labelPwd.Size = new System.Drawing.Size(55, 25);
             this.labelPwd.TabIndex = 0;
@@ -322,16 +326,51 @@
             // 
             // textBoxPwd
             // 
-            this.textBoxPwd.Location = new System.Drawing.Point(135, 428);
+            this.textBoxPwd.Location = new System.Drawing.Point(135, 498);
             this.textBoxPwd.Name = "textBoxPwd";
             this.textBoxPwd.Size = new System.Drawing.Size(184, 25);
-            this.textBoxPwd.TabIndex = 11;
+            this.textBoxPwd.TabIndex = 15;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(-5, 436);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(123, 25);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "监护人1电话:";
+            // 
+            // textBoxGP1
+            // 
+            this.textBoxGP1.Location = new System.Drawing.Point(135, 439);
+            this.textBoxGP1.Name = "textBoxGP1";
+            this.textBoxGP1.Size = new System.Drawing.Size(184, 25);
+            this.textBoxGP1.TabIndex = 13;
+            // 
+            // textBoxGP2
+            // 
+            this.textBoxGP2.Location = new System.Drawing.Point(466, 442);
+            this.textBoxGP2.Name = "textBoxGP2";
+            this.textBoxGP2.Size = new System.Drawing.Size(184, 25);
+            this.textBoxGP2.TabIndex = 14;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(325, 442);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(123, 25);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "监护人2电话:";
             // 
             // frmStuInfo
             // 
+            this.AcceptButton = this.buttonChangeInfo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 474);
+            this.ClientSize = new System.Drawing.Size(800, 535);
             this.Controls.Add(this.comboBoxGender);
             this.Controls.Add(this.buttonChangeInfo);
             this.Controls.Add(this.textBoxIDcard);
@@ -339,6 +378,8 @@
             this.Controls.Add(this.textBoxCollege);
             this.Controls.Add(this.textBoxGKchengji);
             this.Controls.Add(this.textBoxPwd);
+            this.Controls.Add(this.textBoxGP2);
+            this.Controls.Add(this.textBoxGP1);
             this.Controls.Add(this.textBoxGuardian1);
             this.Controls.Add(this.textBoxGuardian2);
             this.Controls.Add(this.textBoxPhoneNumber);
@@ -352,6 +393,8 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.labelPwd);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
@@ -403,5 +446,9 @@
         private System.Windows.Forms.ComboBox comboBoxGender;
         private System.Windows.Forms.Label labelPwd;
         private System.Windows.Forms.TextBox textBoxPwd;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxGP1;
+        private System.Windows.Forms.TextBox textBoxGP2;
+        private System.Windows.Forms.Label label16;
     }
 }

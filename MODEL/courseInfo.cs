@@ -11,6 +11,6 @@ namespace Model
         public string coursenumber{ get; set; }
         public string courescategory{ get; set; }
         public string kcfs{ get; set; }
-        public int hours { get; set; }
+        public string hours { get; set; }
     }
 }

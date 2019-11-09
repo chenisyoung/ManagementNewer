@@ -8,3 +8,13 @@ E:\数据库课程\窗体应用\Management\BLL\obj\Release\BLL.csprojAssemblyRef
 E:\数据库课程\窗体应用\Management\BLL\obj\Release\BLL.csproj.CopyComplete
 E:\数据库课程\窗体应用\Management\BLL\obj\Release\BLL.dll
 E:\数据库课程\窗体应用\Management\BLL\obj\Release\BLL.pdb
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\bin\Release\BLL.dll
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\bin\Release\BLL.pdb
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\bin\Release\DAL.dll
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\bin\Release\MODEL.dll
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\bin\Release\DAL.pdb
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\bin\Release\MODEL.pdb
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\obj\Release\BLL.csprojAssemblyReference.cache
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\obj\Release\BLL.csproj.CopyComplete
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\obj\Release\BLL.dll
+E:\数据库课程\窗体应用 - newer\managementNewer\BLL\obj\Release\BLL.pdb

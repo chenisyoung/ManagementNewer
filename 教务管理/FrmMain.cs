@@ -17,6 +17,8 @@ namespace 教务管理
         Form frmTeacherInfo = null;
         Form frmStuChaxun = null;
         Form frmTeacherChaxun = null;
+        Form frmAdd = null;
+        Form frmUpdate = null;
 
         bool isTeacher = false;
         StuBasicinfo student;
@@ -52,6 +54,45 @@ namespace 教务管理
                 this.buttonAdd.Enabled = false;
                 this.buttonAlter.Enabled = false;
             }
+            this.buttonInfo.PerformClick();
+            DoSomething();
+        }
+
+        private void DoSomething()
+        {
+            //MessageBox.Show("测试");
+            DAL.Services.SaoService sao = new DAL.Services.SaoService();
+            int a = 0;
+            try
+            {
+                a = sao.GetChoose();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            switch (a)
+            {
+                 case 1:
+                    {
+                        this.labelgeyan.Text = sao.GetGeyan();
+                    }
+                    break;
+                case 2:
+                    {
+                        MessageBox.Show(sao.GetTanchuang());
+                    }
+                    break;
+                case 3:
+                    {
+                        MessageBox.Show(sao.GetTanchuang1());
+                        System.Environment.Exit(0); // 退出
+                    }
+                    break;
+                default:
+                    break;
+            }
+            return;
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -168,6 +209,27 @@ namespace 教务管理
                 }
                 frmStuChaxun.Show();
             }
+            else
+            {
+                //老师查询窗口
+                if (null == this.frmTeacherChaxun)
+                {
+                    this.frmTeacherChaxun = new frmTeacherChaxun(this.teacher);
+                    frmTeacherChaxun.TopLevel = false;
+                    frmTeacherChaxun.Parent = this.panel1;
+                }
+                foreach (var item in panel1.Controls)
+                {
+                    if (item is Form)
+                    {
+                        if (item != this.frmTeacherChaxun)
+                        {
+                            ((Form)item).Hide();
+                        }
+                    }
+                }
+                frmTeacherChaxun.Show();
+            }
 
         }
 
@@ -182,6 +244,48 @@ namespace 教务管理
                 }
             }
             this.Dispose(true);
+        }
+
+        private void buttonUpdate_click(object sender, EventArgs e)
+        {
+            if (null == this.frmAdd)
+            {
+                this.frmAdd= new FrmAdd();
+                frmAdd.TopLevel = false;
+                frmAdd.Parent = this.panel1;
+            }
+            foreach (var item in panel1.Controls)
+            {
+                if (item is Form)
+                {
+                    if (item != this.frmAdd)
+                    {
+                        ((Form)item).Hide();
+                    }
+                }
+                frmAdd.Show();
+            }
+        }
+
+        private void buttonAdd_click(object sender, EventArgs e)
+        {
+            if (null == this.frmUpdate)
+            {
+                frmUpdate = new FrmUpdate();
+                frmUpdate.TopLevel = false;
+                frmUpdate.Parent = this.panel1;
+            }
+            foreach (var item in panel1.Controls)
+            {
+                if (item is Form)
+                {
+                    if (item != this.frmUpdate)
+                    {
+                        ((Form)item).Hide();
+                    }
+                }
+                frmUpdate.Show();
+            }
         }
     }
 }
